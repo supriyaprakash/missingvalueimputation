@@ -34,7 +34,7 @@ def computeRMSE(dataset, imputed):
 #Functions to execute imputation methods
 def mice(data, incompleteData):
     s = time.time()
-    filled = MICE(n_imputations=5).complete(incompleteData)
+    filled = MICE(n_imputations=5, verbose=False).complete(incompleteData)
     e = time.time()
     t = e - s
     print("Time taken: " , t)
@@ -52,7 +52,7 @@ def matrixFactorization(data, incompleteData):
 
 def softImpute(data, incompleteData):
     s = time.time()
-    filled = SoftImpute().complete(incompleteData)
+    filled = SoftImpute(verbose=False).complete(incompleteData)
     e = time.time()
     t = e - s
     print("Time taken: " , t)
@@ -61,7 +61,7 @@ def softImpute(data, incompleteData):
 
 def simpleFill(data, incompleteData):
     s = time.time()
-    filled = SimpleFill().complete(incompleteData)
+    filled = SimpleFill(verbose=False).complete(incompleteData)
     e = time.time()
     t = e - s
     print("Time taken: " , t)
@@ -70,7 +70,7 @@ def simpleFill(data, incompleteData):
 
 def iterativeSVD(data, incompleteData):
     s = time.time()
-    filled = IterativeSVD().complete(incompleteData)
+    filled = IterativeSVD(verbose=False).complete(incompleteData)
     e = time.time()
     t = e - s
     print("Time taken: " , t)

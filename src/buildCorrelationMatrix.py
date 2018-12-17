@@ -27,7 +27,10 @@ def buildCorrelationMatrix(n, filename):
             f.write(str(val) + " ")
         f.write("\n")
 
-args = sys.argv
-n = int(args[1])
-fname = args[2]
-buildCorrelationMatrix(n, fname)
+def main():
+    args = sys.argv
+    n = int(args[1])
+    fname = args[2]
+    buildCorrelationMatrix(n, fname)
+    
+main()
